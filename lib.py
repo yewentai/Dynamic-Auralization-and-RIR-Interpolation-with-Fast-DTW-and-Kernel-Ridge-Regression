@@ -1,10 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import numpy as np
-from scipy.signal import correlate
+from scipy.signal import correlate, find_peaks
 
 
-def edc_analyze(signal, sampling_rate, threshold=0.1, plot=True):
+def edc_analyze(signal, sampling_rate, threshold=10e-6, plot=True):
     # Compute the energy decay curve (EDC)
     edc = np.cumsum(signal[::-1] ** 2)[::-1]
 
@@ -67,10 +67,6 @@ def align_signals(signal1, signal2):
     return aligned_signal1, aligned_signal2
 
 
-import numpy as np
-from scipy.signal import correlate, find_peaks
-
-
 def align_signals_peaks(*signals):
     """
     Align multiple signals in time using peak alignment of cross-correlation.
@@ -113,9 +109,6 @@ def align_signals_peaks(*signals):
             aligned_signals.append(signals[i])
 
     return tuple(aligned_signals)
-
-
-import numpy as np
 
 
 def construct_interpolated_point_cloud(P, Q, kappa, T_bar):
