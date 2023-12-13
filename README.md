@@ -1,1 +1,1 @@
-# Signal-Processing-Algorithms-and-Implementations-B-KUL-T4VRD2-Project-23-24
+Course Project: Signal-Processing-Algorithms-and-Implementations-B-KUL-T4VRD2-23-24
